@@ -65,15 +65,10 @@ def move():
     targets.clear()
 
     for target in dupe:
-        if abs(target - ball) > 13:
+        if abs(target - ball) > 13 and inside(target):
             targets.append(target)
 
     draw()
-
-    for target in targets:
-        if not inside(target):
-            return
-
     ontimer(move, 50)
 
 
